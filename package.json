@@ -1,6 +1,6 @@
 {
   "name": "botmaster-aog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Actions on Google integration for the Botmaster chatbot framework",
   "scripts": {
     "test": "jest",
@@ -11,7 +11,7 @@
   "author": "Chyuibacca",
   "license": "MIT",
   "engines": {
-    "node": ">10.x"
+    "node": ">=10.x"
   },
   "dependencies": {
     "actions-on-google": "^2.5.0",
