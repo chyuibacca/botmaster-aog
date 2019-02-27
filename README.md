@@ -1,6 +1,11 @@
 # botmaster-aog
 Actions on Google integration for the [Botmaster](https://github.com/botmasterai/botmaster) chatbot framework.
 
+The Actions on Google bot exposes a request fulfillment endpoint that accepts requests from Google Assistant using the [`actions-on-google`](https://www.npmjs.com/package/actions-on-google) Actions SDK.
+
+Note: Currently only supports simple responses (i.e. no Cards or Table support).
+
+
 ## Installation
 Install the Botmaster AoG package:
 - Yarn: `yarn add botmaster-aog`
@@ -9,7 +14,7 @@ Install the Botmaster AoG package:
 
 
 ## Usage
-To use the Actions on Google integration, add it to your Botmaster application as follows:
+The simplest way to use the Actions on Google integration is to add it to your Botmaster application as follows:
 ```javascript
 const ActionsOnGoogleBot = require('botmaster-aog');
 const aogSettings = {
@@ -37,20 +42,20 @@ The Actions on Google bot integration supports the following options:
 Note: Either the `expressApp` or `port` option must be specified. If an [Express](http://expressjs.com/) app is specified, the webhook is mounted on the existing app. Otherwise, a new [Express](http://expressjs.com/) app is created and started on the specified port.
 
 
-## Webhook Endpoint
-The Actions on Fulfillment webhook is mounted at:
+## Fulfillment Endpoint
+The Actions on fulfillment endpoint is mounted at:
 
 ```
-GET /<id>/fulfilment
+GET /<id>/fulfillment
 ```
 
-If no `id` is specified in the options list, the webhook will default to:
+If no `id` is specified in the options list, the endpoint will default to:
 ```
 GET /actions-on-google/fulfillment
 ```
 
 ## Intents
-The Actions on Google bot handles the following intents:
+The Actions on Google bot currently handles the following intents:
 
 - actions.intent.MAIN
 - FALLBACK
